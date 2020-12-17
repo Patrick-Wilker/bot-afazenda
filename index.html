@@ -25,6 +25,7 @@
 <body>
 	<div>
 		<h1>A fazenda é da Jojo</h1>
+		<p id="votos"></p>
 		<figure>
 			<img src="https://p2.trrsf.com/image/fget/cf/940/0/images.terra.com/2020/11/13/jojo01.jpg" alt="Jordana">
 		</figure>
@@ -34,7 +35,10 @@
 
 <script type="text/javascript">
 	console.log("Deixa de ser curioso!");
+	let qtd = 0
 	setInterval(function(){
+		qtd++
+		document.getElementById("votos").innerHTML = qtd + ' votos'
 		$.post("https://voting-vote-producer.r7.com/vote", 
 			"voting_id=302&alternative_id=759");
 	},650)
